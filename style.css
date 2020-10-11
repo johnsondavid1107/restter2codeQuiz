@@ -5,7 +5,9 @@
 }
 
 li:hover {
-    background-color: red;
+    background-color:gold;
+    border-radius: 5px;
+    width: max-content;
 }
 /* 
 body {
@@ -26,15 +28,22 @@ body{
     margin-top: 2.3rem;
 }
 
+#option-list {
+    display: block;
+    margin-left: 20px;
+    padding-left: 70px;
+}
+
 .intro {
     margin-top: 3rem;
 }
 
 #question-result {
-    color: green;
+    color: #4d94ff;
     display: block;
-    margin-left: 22rem;
-    font-size: 80px;
+    margin: auto;
+    text-align: center;
+    font-size: 77px;
 }
 
 #question {
@@ -47,3 +56,4 @@ body{
     text-align: center;
   
 }
+
