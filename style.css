@@ -1,0 +1,49 @@
+#timer {
+    font-size: 100px;
+    text-align: justify;
+
+}
+
+li:hover {
+    background-color: red;
+}
+/* 
+body {
+    background-image: url(Assets/quizTime.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+} */
+body{
+    font-family: 'Lato', sans-serif;
+}
+.emptyRectangle {
+    width: auto;
+    height: 100%;
+}
+.link {
+    display: block;
+    margin-top: 2.3rem;
+}
+
+.intro {
+    margin-top: 3rem;
+}
+
+#question-result {
+    color: green;
+    display: block;
+    margin-left: 22rem;
+    font-size: 80px;
+}
+
+#question {
+
+    font-weight: 900;
+    font-size: 30px;
+}
+.op {display: block;
+    margin: auto;
+    text-align: center;
+  
+}

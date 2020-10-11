@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+
+  <title>Quiz Game</title>
+
+</head>
+
+<body>
+  <div class="container">
+   
+    <div class="row">
+      <div class="col-md-10"><a class="link" href="file:///Users/ness/Desktop/fullflex/homework/9.29.20h/restter2codeQuiz/highscore.html" target="_blank">Show High Score</a></div>
+      <div class="col-md-2">
+        <div id="timer"></div>
+
+      </div>
+    </div>
+    <p class="intro"> Hello and welcome to the 1st annual QUIZ SHOW!  We will test your knowledge!  How many can you answer?! <br>here are the rules.  This is a timed event!  Answer the question correctly and it will be added to your total score.  Get the question wrong and you will lose time of the clock.  Click on the button below to start!</p>
+    <button type="button" class="btn btn-primary btn-lg" id="button">Click Here</button>
+
+
+    <div class="row">
+      <div class="col-sm-4">
+        
+      </div>
+      <div class="col-sm-5">
+        <div id="question"></div>
+        <ol type="a" id="option-list"></ol>
+      </div>
+      <div class="col-sm-4">
+      </div>
+    </div>
+
+
+
+    <div id="question-result"></div>
+
+
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
