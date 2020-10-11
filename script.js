@@ -78,12 +78,12 @@ function showHighScore() {
 
   localStorage.setItem('scores', JSON.stringify(highScore));
 
-  if (highScore.length >= 10) {
-    // highScore.shift();
-    window.onbeforeunload = function (e) { localStorage. clear(); };
-  } else {
-    console.log("This did not work");
-  }
+  // if (highScore.length >= 10) {
+  //   // highScore.shift();
+  //   window.onbeforeunload = function (e) { localStorage. clear(); };
+  // } else {
+  //   console.log("This did not work");
+  // }
 
 
   console.log(highScore);
@@ -93,11 +93,6 @@ function showHighScore() {
   }
 
 }
-
-
-
-
-
 
 function updateTime() {
   timerEl.textContent = time;

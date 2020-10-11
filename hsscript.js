@@ -1,10 +1,4 @@
 
-// var user = {
-//     name: name,
-//     score: correctCount,
-// }
-// var name = prompt("Please enter your initials");
-
 var resultsEl = document.querySelector("#results");
 var highScore = localStorage.getItem("scores");
 
@@ -22,7 +16,6 @@ function postScore() {
         contentLi.textContent = "Name: " + highScore[i].name + " Score:" + highScore[i].score;
         contentOl.append(contentLi);
         console.log(contentOl);
-        // resultsEl.textContent = contentUl;
         highScore.sort(function (a, b) {
             return b.score - a.score
         })
@@ -35,9 +28,6 @@ function postScore() {
 
 };
 
-if( localStorage > 5){
-    localStorage.clear();
-}
 console.log(highScore);
 console.log(highScore.length);
 
