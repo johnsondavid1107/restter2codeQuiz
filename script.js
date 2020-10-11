@@ -42,11 +42,6 @@ var correctCount = 0;
 var time = 20;
 var intervalId;
 
-function newPage() {
-
-  window.location.href = "http://www.google.com";
-}
-
 
 function endQuiz() {
   clearInterval(intervalId);
@@ -56,7 +51,7 @@ function endQuiz() {
   var btn = document.createElement("BUTTON");
   btn.innerHTML = "Show Highscores!";
   btn.addEventListener("click", function () {
-    window.open("file:///Users/ness/Desktop/fullflex/homework/9.29.20h/restter2codeQuiz/highscore.html")
+    window.open("https://johnsondavid1107.github.io/restter2codeQuiz/highscore.html")
   });
   document.body.append(btn);
   setTimeout(showHighScore, 2000);
