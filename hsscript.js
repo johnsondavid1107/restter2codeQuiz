@@ -18,7 +18,7 @@ function postScore() {
         console.log(contentOl);
         highScore.sort(function (a, b) {
             return b.score - a.score
-        })
+        });
 
     }
    

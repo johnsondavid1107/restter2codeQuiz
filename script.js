@@ -34,49 +34,114 @@ var questionEl = document.querySelector("#question");
 var optionListEl = document.querySelector("#option-list");
 var questionResultEl = document.querySelector("#question-result");
 var timerEl = document.querySelector("#timer");
-var buttonEl = document.querySelector("#button")
+var buttonEl = document.querySelector("#button");
 var introEl = document.querySelector(".intro");
+var formS = document.querySelector("#formS");
+var createI = document.createElement("input");
+var name = "";
+
 
 var questionIndex = 0;
 var correctCount = 0;
 var time = 20;
 var intervalId;
 
+// function formCreate() {
+
+//   var div = document.createElement("div");
+//   // var createF = document.createElement("form");
+//   var createI = document.createElement("input");
+//   // formS.appendChild(createI);
+//   var btn = document.createElement("button");
+//   btn.innerHTML = "Submit";
+//   // formS.appendChild(createI);
+//   // createI.innerHTML("test");
+//   document.body.append(div);
+//   // div.append(createF);
+//   div.append(createI);
+//   div.append(btn);
+
+//   function getName(event) {
+//     var name = createI.value;
+//     window.open("https://johnsondavid1107.github.io/restter2codeQuiz/highscore.html")
+
+//     console.log(name);
+
+//   }
+//   btn.addEventListener("click", getName);
+
+
+// }
 
 function endQuiz() {
   clearInterval(intervalId);
   var body = document.body;
-  body.innerHTML = "Game over, You scored " + correctCount;
+  body.innerHTML = "Game over, You scored " + correctCount + ".  Please enter your initils below.";
+
+
+  var div = document.createElement("div");
+  document.body.append(div);
+  div.append(createI);
+
+
 
   var btn = document.createElement("BUTTON");
-  btn.innerHTML = "Show Highscores!";
-  btn.addEventListener("click", function () {
-    window.open("https://johnsondavid1107.github.io/restter2codeQuiz/highscore.html")
-  });
+  btn.innerHTML = "Submit and Show Highscores!";
   document.body.append(btn);
-  setTimeout(showHighScore, 2000);
+  // setTimeout(showHighScore, 2000);
+
+  btn.addEventListener("click", function () {
+
+    name = createI.value;
+
+    var user = {
+      name: name,
+      score: correctCount
+    }
+    
+    var highScore = localStorage.getItem("scores");
+
+    if (!highScore) {
+      highScore = []
+    } else {
+      highScore = JSON.parse(highScore)
+    }
+
+    highScore.push(user);
+
+    localStorage.setItem('scores', JSON.stringify(highScore));
+
+    
+    window.open("highscore.html");
+   
+
+    
+
+    // https://johnsondavid1107.github.io/restter2codeQuiz/highscore.html
+  });
+console.log(highScore);
+  // formCreate();
 }
 
 
 function showHighScore() {
+  // var name = "";
+  // var highScore = localStorage.getItem("scores");
 
-  var name = prompt("Please enter your initials");
-  var highScore = localStorage.getItem("scores");
+  // var user = {
+  //   name: name,
+  //   score: correctCount
+  // }
 
-  var user = {
-    name: name,
-    score: correctCount
-  }
+  // if (!highScore) {
+  //   highScore = []
+  // } else {
+  //   highScore = JSON.parse(highScore)
+  // }
 
-  if (!highScore) {
-    highScore = []
-  } else {
-    highScore = JSON.parse(highScore)
-  }
+  // highScore.push(user);
 
-  highScore.push(user);
-
-  localStorage.setItem('scores', JSON.stringify(highScore));
+  // localStorage.setItem('scores', JSON.stringify(highScore));
 
   // if (highScore.length >= 10) {
   //   // highScore.shift();
@@ -86,11 +151,11 @@ function showHighScore() {
   // }
 
 
-  console.log(highScore);
-  if (!name) {
-    alert("Invalid - Please try entering something...man.")
-    showHighScore();
-  }
+  // console.log(highScore);
+  // if (!name) {
+  //   alert("Invalid - Please try entering something...man.")
+  //   showHighScore();
+  // }
 
 }
 
@@ -144,13 +209,13 @@ function checkAnswer(event) {
     if (answer === questions[questionIndex].answer) {
       questionResultEl.textContent = "Correct! :)";
       correctCount++;
-      console.log (correctCount);
+      console.log(correctCount);
     } else {
       questionResultEl.textContent = "Incorrect :(";
       time = time - 2;
       timerEl.textContent = time;
     }
-   
+
   }
 
 
